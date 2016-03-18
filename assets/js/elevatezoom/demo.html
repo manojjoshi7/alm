@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset='utf-8'/>
+	<title>jQuery elevateZoom Demo</title>
+	<script src='jquery-1.8.3.min.js'></script>
+	<script src="jquery.elevateZoom-3.0.8.min.js"></script>
+</head>
+<body>
+<h1>Basic Zoom Example</h1>
+
+<div class="zoom-wrapper">
+<div class="zoom-left">
+<img style="border:1px solid #e8e8e6;" id="zoom_03" src="http://www.elevateweb.co.uk/wp-content/themes/radial/zoom/images/small/image1.png" 
+data-zoom-image="http://www.elevateweb.co.uk/wp-content/themes/radial/zoom/images/large/image1.jpg"
+width="411"  />
+
+<div id="gallery_01" style="width="500pxfloat:left; ">
+ 
+<a  href="#" class="elevatezoom-gallery" data-update="" data-image="http://www.elevateweb.co.uk/wp-content/themes/radial/zoom/images/small/image1.png" 
+data-zoom-image="http://www.elevateweb.co.uk/wp-content/themes/radial/zoom/images/large/image1.jpg">
+<img src="http://www.elevateweb.co.uk/wp-content/themes/radial/zoom/images/small/image1.png" width="100"  /></a>
+
+<a  href="#" class="elevatezoom-gallery"
+     data-image="http://www.elevateweb.co.uk/wp-content/themes/radial/zoom/images/small/image2.png"
+     data-zoom-image="http://www.elevateweb.co.uk/wp-content/themes/radial/zoom/images/large/image2.jpg"
+    ><img src="http://www.elevateweb.co.uk/wp-content/themes/radial/zoom/images/small/image2.png" width="100"  /></a>
+
+<a href="tester" class="elevatezoom-gallery" 
+     data-image="http://www.elevateweb.co.uk/wp-content/themes/radial/zoom/images/small/image3.png"
+     data-zoom-image="http://www.elevateweb.co.uk/wp-content/themes/radial/zoom/images/large/image3.jpg">
+     <img src="http://www.elevateweb.co.uk/wp-content/themes/radial/zoom/images/small/image3.png" width="100"  />
+</a>
+
+<a href="tester" class="elevatezoom-gallery" 
+     data-image="http://www.elevateweb.co.uk/wp-content/themes/radial/zoom/images/small/image4.png"
+     data-zoom-image="http://www.elevateweb.co.uk/wp-content/themes/radial/zoom/images/large/image4.jpg"
+     
+     class="slide-content"
+    ><img src="http://www.elevateweb.co.uk/wp-content/themes/radial/zoom/images/small/image4.png" width="100"  /></a>
+    
+</div>
+</div>
+</div>
+
+<script>
+ $("#zoom_03").elevateZoom({gallery:'gallery_01', cursor: 'pointer', galleryActiveClass: 'active', imageCrossfade: true, loadingIcon: 'http://www.elevateweb.co.uk/spinner.gif'}); 
+  $("#zoom_03").bind("click", function(e) { var ez = $('#zoom_03').data('elevateZoom');	 
+  $.fancybox(ez.getGalleryList()); return false; }); 
+</script>
+</body>
+</html>
